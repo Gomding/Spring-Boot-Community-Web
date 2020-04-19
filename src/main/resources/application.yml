@@ -1,30 +1,18 @@
-facebook :
-    client :
-        clientId : 2885296784893597
-        clientSecret : b6445b35df28d788faec3e28b5d6e0f1
-        accessTokenUri: https://graph.facebook.com/oauth/access_token
-        userAuthorizationUri: https://www,facebook.com/dialog/oauth?display=popup
-        tokenName: oauth_token
-        authenticationScheme: query
-        clientAuthenticationScheme: form
-        scope: email
-    resource:
-        userInfoUri: https://graph.facebook.com/me?fields=id,name,email,link
+spring:
 
-google :
-    client:
-        clientId: 809507897474-oh43b99ievlqvb7h10eekbj0trl07rec.apps.googleusercontent.com
-        clientSecret: iMHVSqzwJhnROfu3Olfo3J_u
-        accessTokenUri: https://accounts.google.com/o/oauth2/token
-        userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
-        scope: email, profile
-    resource:
-        userInfoUri: https://www.googleapis.com/oauth2/v2/userinfo
+    security:
+        oauth2:
+            client:
+                registration:
+                    facebook :
+                        client-id : 2885296784893597
+                        clientSecret : b6445b35df28d788faec3e28b5d6e0f1
+                    google :
+                        clien-id: 809507897474-oh43b99ievlqvb7h10eekbj0trl07rec.apps.googleusercontent.com
+                        clientSecret: iMHVSqzwJhnROfu3Olfo3J_u
 
-kakao :
-    client :
-        clientId: 420394
-        accessTokenUri: https://kauth.kakao.com/oauth/token
-        userAuthorizationUri: https://kauth.kakao.com/oauth/authorize
-    resource:
-        userInfoUri: https://kapi.kakao.com/v1/user/me
+
+custom:
+    oauth2:
+        kakao :
+            client-id: 420394
