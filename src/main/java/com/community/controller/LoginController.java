@@ -1,7 +1,5 @@
 package com.community.controller;
 
-import com.community.annotation.SocialUser;
-import com.community.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,7 +13,7 @@ public class LoginController {
     }
 
     @GetMapping("/loginSuccess")
-    public String loginComplete(@SocialUser User user) {
+    public String loginComplete() {
         return "redirect:/board/list";
     }
 
